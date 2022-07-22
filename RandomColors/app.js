@@ -1,16 +1,16 @@
-const button = document.querySelector('button');
-const h1 = document.querySelector('h1');
+const button = document.querySelector("button");
+const heading = document.querySelector("h1");
+const body = document.querySelector("body");
 
-button.addEventListener('click', function () {
-    const newColor = makeRandColor();
-    document.body.style.backgroundColor = newColor;
-    h1.innerText = newColor;
-})
+button.addEventListener("click", function () {
+  body.style.backgroundColor = randomColor();
+  heading.textContent = randomColor();
+});
 
-const makeRandColor = () => {
-    const r = Math.floor(Math.random() * 255);
-    const g = Math.floor(Math.random() * 255);
-    const b = Math.floor(Math.random() * 255);
-    return `rgb(${r}, ${g}, ${b})`;
+function randomColor() {
+  const red = Math.floor(Math.random() * 255) + 1;
+  const green = Math.floor(Math.random() * 255) + 1;
+  const blue = Math.floor(Math.random() * 255) + 1;
+  const rgb = `rgb(${red},${green},${blue})`;
+  return rgb;
 }
-
